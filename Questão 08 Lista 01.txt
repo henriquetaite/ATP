@@ -1,0 +1,29 @@
+// See https://aka.ms/new-console-template for more information
+
+using System;
+class Program {
+    public static void Main () {
+
+/*Declarando variáveis CDU = 3 dígitos da conta, C = dígito 1, D = dígito 2, U = dígito 3, UDC = conta invertida, soma = soma de CDU + UDC,
+num1 = centena da soma, num2 = dezena da soma, num3 = unidade da soma, dv = dígito verificador*/
+        int CDU = 0, C = 0, D = 0, U = 0, UDC = 0, soma = 0, num1, num2, num3, dv = 0; 
+
+//Solicitando dados para o usuário
+        Console.WriteLine("Digite o número de 3 dígitos da sua conta-corrente");
+        CDU = int.Parse (Console.ReadLine());
+
+//Fazendo os calculos intermediários para chegar ao dígito verificador
+        C = CDU / 100;
+        D = (CDU % 100) / 10;
+        U = (CDU % 100) % 10; 
+        UDC = U + D + C;
+        soma = CDU + UDC;
+        num1 = soma / 100;
+        num2 = (soma % 100) / 10;
+        num3 = (soma % 100) % 10;
+        dv = (num1 * 1) + (num2 * 2) + (num3 * 3);
+
+//Imprimindo o valor do dígito verificador
+        Console.WriteLine("O dígito verificador da sua conta-corrente é: {0}", dv);
+    }
+}

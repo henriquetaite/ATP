@@ -1,0 +1,23 @@
+// See https://aka.ms/new-console-template for more information
+
+using System;
+class Program {
+    public static void Main () {
+
+//Declarando variáveis: dsa = dias sem acidentes        
+        int dsa = 0, anos = 0, meses = 0, dias = 0; 
+
+//Solicitando dados para o usuário
+        Console.WriteLine ("Digite quantos dias sem acidentes");
+        
+        dsa = int.Parse (Console.ReadLine());
+        
+//Fazendo as conversões
+        anos = dsa / 365;
+        meses = (dsa % 365) / 30;
+        dias = (dsa % 365) % 30;
+
+//Imprimindo a quantidade de anos, meses e dias sem acidentes
+        Console.WriteLine("A empresa está há: {0} anos, {1} meses, {2} dias, sem acidentes", anos, meses, dias);
+    }
+}
