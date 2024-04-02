@@ -1,0 +1,24 @@
+using System;
+class Program {
+    public static void Main () {
+
+//Declarando variáveis: dist = valor da distância entre os pontos        
+        double x1 = 0, y1 = 0, x2 = 0, y2 = 0, dist = 0; 
+
+//Solicitando dados para o usuário
+        Console.WriteLine("Digite a primeira coordenada do Ponto 1");
+        x1 = double.Parse (Console.ReadLine());
+        Console.WriteLine ("Digite a segunda coordenada do Ponto 1");
+        y1 = double.Parse (Console.ReadLine());
+        Console.WriteLine ("Digite a primeira coordenada do Ponto 2");
+        x2 = double.Parse (Console.ReadLine());
+        Console.WriteLine ("Digite a segunda coordenada do Ponto 2");
+        y2 = double.Parse (Console.ReadLine());
+
+//Fazendo o cálculo da distância
+        dist = Math.Sqrt ((Math.Pow (x2,2) - Math.Pow (x1,2)) + (Math.Pow (y2,2) - Math.Pow (y1,2)));
+
+//Imprimindo o valor da distância entre dois pontos no plano
+        Console.WriteLine("A distância entre os dois pontos no plano é: {0}", dist);
+    }
+}

@@ -1,0 +1,21 @@
+// See https://aka.ms/new-console-template for more information
+using System;
+class Program
+{
+        public static void Main(string[] args)
+        {
+                double a = 0, b = 0, c = 0; //a: hipotenusa  / b: cateto 1 / c: cateto 2   
+
+                //Pedindo para usuário inserir os catetos do triângulo e registrando estes dados
+                Console.WriteLine("Digite o primeiro cateto do triângulo retângulo");
+                b = double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite o segundo cateto do triângulo retângulo");
+                c = double.Parse(Console.ReadLine());
+
+                //Fazendo o cálculo da hipotenusa
+                a = Math.Sqrt(Math.Pow(b, 2) + Math.Pow(c, 2));
+
+                //Imprimindo os resultados dos cálculos acima
+                Console.WriteLine("A hipotenusa do triângulo é igual a: {0}", a);
+        }
+}
