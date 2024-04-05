@@ -1,5 +1,5 @@
 using System;
-class Program {
+class questao8Program {
     public static void Main () {
 
 //Declarando variáveis
