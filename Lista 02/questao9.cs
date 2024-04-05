@@ -1,7 +1,6 @@
 using System;
-class Program questao 09.cs {
+class Program {
     public static void Main () {
-        questao 09.cs
 
 //Declarando variáveis
 double A = 0, B = 0;
