@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas ATP\\ATP\\Lista 02\\Lista 02.csproj": {}
+    "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista 02\\Lista 02.csproj": {}
   },
   "projects": {
-    "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas ATP\\ATP\\Lista 02\\Lista 02.csproj": {
+    "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista 02\\Lista 02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas ATP\\ATP\\Lista 02\\Lista 02.csproj",
+        "projectUniqueName": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista 02\\Lista 02.csproj",
         "projectName": "Lista 02",
-        "projectPath": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas ATP\\ATP\\Lista 02\\Lista 02.csproj",
+        "projectPath": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista 02\\Lista 02.csproj",
         "packagesPath": "C:\\Users\\USUÁRIO\\.nuget\\packages\\",
-        "outputPath": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas ATP\\ATP\\Lista 02\\obj\\",
+        "outputPath": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista 02\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USUÁRIO\\AppData\\Roaming\\NuGet\\NuGet.Config"

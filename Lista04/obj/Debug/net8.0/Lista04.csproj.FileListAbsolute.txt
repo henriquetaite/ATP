@@ -1,0 +1,8 @@
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.GeneratedMSBuildEditorConfig.editorconfig
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.AssemblyInfoInputs.cache
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.AssemblyInfo.cs
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.csproj.CoreCompileInputs.cache
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.sourcelink.json
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.dll
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\refint\Lista04.dll
+G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.pdb
