@@ -1,27 +1,28 @@
 using System;
-class Program questão 01.cs {
-    public static void Main () {
-questão 01.cs
 
-//Declarando variáveis
-double A = 0, B = 0;
+class Program {
+  public static void Main (string[] args) {
 
-//Solicitando que o usuário digite 2 números para comparação
-Console.WriteLine("Digite 2 números aleatórios");
+    int num, contnegativos = 0, contzeros = 0, contpositivos = 0;
+    string opcao;
 
-//Fazendo a leitura e registro dos números
-A = double.Parse (Console.ReadLine());
-B = double.Parse (Console.ReadLine());
+    do {
+        Console.WriteLine ("Informe um número: ");
+        num = int.Parse (Console.ReadLine());
 
-//Criando condições e definindo comandos para cada uma delas 
-    if (A > B) {
-    Console.WriteLine ("O maior número informado é: {0}", A);
-    }
-    else if (A < B) {
-    Console.WriteLine ("O maior número informado é: {0}", B);
-    }
-    else {
-    Console.WriteLine ("Os números possuem valores iguais");
-    }
+        if (num < 0)
+          contnegativos++;
+        else if (num == 0)
+          contzeros++;
+        else 
+          contpositivos++;
+
+        Console.WriteLine ("Deseja informar outro número (s/n)? ");
+        opcao = Console.ReadLine();
+    } while (opcao == "s");
+
+    Console.WriteLine ("Negativos informados: " + contnegativos);
+    Console.WriteLine ("Zeros informados: " + contzeros);
+    Console.WriteLine ("Positivos informados: " + contpositivos);
+  }
 }
-}   

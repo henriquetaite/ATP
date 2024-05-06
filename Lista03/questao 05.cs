@@ -1,26 +1,28 @@
 using System;
+
 class Program {
-    public static void Main () {
+  public static void Main (string[] args) {
 
 //Declarando variáveis
-double A = 0, B = 0;
+    double E = 1; //Declarando como double pois envolve resultado de divisões
+    int fatorial = 1, N;
 
-//Solicitando que o usuário digite 2 números para comparação
-Console.WriteLine("Digite 2 números aleatórios");
+//Solicitando e registrando o número N ao usuário
+    Console.WriteLine ("Favor, informe um número inteiro positivo");
+    N = int.Parse (Console.ReadLine());
 
-//Fazendo a leitura e registro dos números
-A = double.Parse (Console.ReadLine());
-B = double.Parse (Console.ReadLine());
-
-//Criando condições e definindo comandos para cada uma delas 
-    if (A > B) {
-    Console.WriteLine ("O maior número informado é: {0}", A);
+//Condição para garantir que teremos um número válido para o cálculo proposto
+    if (N < 0) {
+      Console.WriteLine("Número inválido! Por favor, digite um número maior ou igual a zero");
     }
-    else if (A < B) {
-    Console.WriteLine ("O maior número informado é: {0}", B);
-    }
+
+//Criando condição e comando, caso a situação não seja a descrita anteriormente
     else {
-    Console.WriteLine ("Os números possuem valores iguais");
+      for (int c = 1; c <= N; c++) {
+        fatorial *= c;
+        E += 1 / fatorial;
+      }
+      Console.WriteLine ("O valor de E é: {0}", E);
     }
+  }
 }
-}   

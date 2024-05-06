@@ -1,26 +1,36 @@
 using System;
+
 class Program {
-    public static void Main () {
+  public static void Main (string[] args) {
 
-//Declarando variáveis
-double A = 0, B = 0;
+//Declarando variáveis: tn (divisíveis por 3 e 9 ao mesmo tempo), d (divisíveis por 2), cinc (divisíveis por 5) e x (números informados)
+    int tn = 0, d = 0, cinc = 0, x;
 
-//Solicitando que o usuário digite 2 números para comparação
-Console.WriteLine("Digite 2 números aleatórios");
+//Criando função for para definir o intervalo de 10 números
+    for (int c = 1; c <= 10; c++) {
 
-//Fazendo a leitura e registro dos números
-A = double.Parse (Console.ReadLine());
-B = double.Parse (Console.ReadLine());
+//Solicitando 10 números ao usuário e registrando-os na variável x
+      Console.WriteLine ("Por favor, digite 10 números aleatórios.");
+      x = int.Parse (Console.ReadLine());
 
-//Criando condições e definindo comandos para cada uma delas 
-    if (A > B) {
-    Console.WriteLine ("O maior número informado é: {0}", A);
+//Criando função if para imprimir se o número atende as condições do enunciado ou não
+        if (x % 3 == 0 && x % 9 == 0)
+          tn++;
+
+        if (x % 2 == 0) 
+          d++;
+
+        if (x % 5 == 0)
+          cinc++;      
+//Não foi usado "else if" acima pois um número pode ser divisível por 2 e por 5 ao mesmo tempo
+      
+        else
+          Console.WriteLine ("Número não é divisível pelos valores");
+      }
+    
+//Imprimindo resultados
+          Console.WriteLine ("A quantidade de números divisíveis por 3 e 9 é: {0}", tn);
+          Console.WriteLine ("A quantidade de números divisíveis por 2 é: {0}", d);
+          Console.WriteLine ("A quantidade de números divisíveis por 5 é: {0}", cinc);
+      }
     }
-    else if (A < B) {
-    Console.WriteLine ("O maior número informado é: {0}", B);
-    }
-    else {
-    Console.WriteLine ("Os números possuem valores iguais");
-    }
-}
-}   

@@ -1,26 +1,28 @@
 using System;
+
 class Program {
-    public static void Main () {
+  public static void Main (string[] args) {
 
-//Declarando variáveis
-double A = 0, B = 0;
+//Declarando as variáveis: n (número digitado pelo usuário), S (resultado solicitado pelo enunciado) e valor (armazena parte do cálculo da expressão)
+    int n; //Em int pois é solicitado um número inteiro
+    double S = 1, valor = 0; //Em double pois são resultados que envolvem divisão
 
-//Solicitando que o usuário digite 2 números para comparação
-Console.WriteLine("Digite 2 números aleatórios");
+//Solicitando o número inteiro positivo ao usuário
+    Console.WriteLine ("Digite um número inteiro maior que zero");
+    n = int.Parse (Console.ReadLine());
 
-//Fazendo a leitura e registro dos números
-A = double.Parse (Console.ReadLine());
-B = double.Parse (Console.ReadLine());
-
-//Criando condições e definindo comandos para cada uma delas 
-    if (A > B) {
-    Console.WriteLine ("O maior número informado é: {0}", A);
+//Condição para garantir que o usuário digite um número positivo
+    if (n <= 0) {
+      Console.WriteLine ("Número inválido! Digite um número maior que zero.");
+      n = int.Parse (Console.ReadLine());
     }
-    else if (A < B) {
-    Console.WriteLine ("O maior número informado é: {0}", B);
-    }
-    else {
-    Console.WriteLine ("Os números possuem valores iguais");
-    }
+
+//Criando o método while para executar o cálculo, caso receba um número inteiro positivo
+        for (int c = 2; c <= n; c++) {
+        valor = 1.0 / c;
+        S += valor;
+      }
+//Imprimindo resultado solicitado pelo enunciado
+      Console.WriteLine("O número {0} gera um valor de S igual a: {1}", n, S);
+  }
 }
-}   
