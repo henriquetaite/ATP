@@ -1,5 +1,5 @@
 using System;
-public class Exercicio01
+public class questao01
 {
     public void Rodar()
     {
