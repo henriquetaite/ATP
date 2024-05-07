@@ -1,5 +1,5 @@
 using System;
-public class questao01
+public class questao04
 {
     public void Rodar()
     {
