@@ -1,12 +1,8 @@
 using System;
-public class Questao01
-{
+public class Questao01 {
     public static void Rodar() {
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    int N = 0; //Variável para armazenar o número de alunos
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
+ int N = 0; //Variável para armazenar o número de alunos
 
 //Solicitando e registrando a quantidade de alunos
     Console.WriteLine ("Digite a quantidade de alunos");
@@ -14,6 +10,10 @@ public class Questao01
 
 //Criando comando for para registrar 3 notas para cada aluno
     for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+
+//Declarando variáveis
+    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
+    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
 
 //Solicitando e registrando as notas
         Console.WriteLine ($"Aluno {i + 1}:");
@@ -35,6 +35,7 @@ public class Questao01
             }
             else {
                 Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
+                opcao = char.Parse (Console.ReadLine());
             }
         } 
     }
