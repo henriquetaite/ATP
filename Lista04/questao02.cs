@@ -9,8 +9,6 @@ public class questao02
 
 //Criando condição flag com do while para encerrar quando o Zero for digitado
             do {
-
-//Solicitando e registrando salários
                 Console.WriteLine ("Digite seu salário mensal, ou digite zero para encerrar");
                 salario = double.Parse (Console.ReadLine());
 
