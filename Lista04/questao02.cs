@@ -1,8 +1,43 @@
 using System;
 public class questao02
 {
-    public void Rodar()
-    {
-        Console.WriteLine("Olá, mundo!!!");
+    public static void Rodar() {
+
+//Declarando variáveis
+        double salario = 0, total = 0;
+        int filhos = 0, pessoas = 0;
+
+    //Criando condição flag com do while para encerrar quando o Zero for digitado
+        do {
+
+    //Solicitando e registrando salários
+            Console.WriteLine ("Digite seu salário mensal, ou digite zero para encerrar");
+            salario = double.Parse (Console.ReadLine());
+
+    //Criando condicionais para ativar procedimento ou fazer as impressões e os registros necessários
+                if (salario == 0) {
+                    CalcularMediaSalarial (total, pessoas);
+                }
+    //Solicitando e registrando número de filhos
+                else if (salario > 0) {
+                    Console.WriteLine ("Quantos filhos você tem?");
+                    filhos = int.Parse (Console.ReadLine());
+                    salario += salario;
+                    pessoas++;
+                }
+                else {
+                    Console.WriteLine ("Salário inválido! Digite zero para encerrar ou o valor do seu salário");
+                    salario = double.Parse (Console.ReadLine ());
+                    Console.WriteLine ("Quantos filhos você tem?");
+                    filhos = int.Parse (Console.ReadLine());
+                    pessoas++;
+                }
+                while (salario != 0);
+            }
+    //Criando procedimento para calcular e informar a média salarial após encerramento das leituras
+            static void CalcularMediaSalarial (total, pessoas)  {
+                double media = total / pessoas;
+                Console.WriteLine ("O salário médio da população é {0}", media);
+        }
     }
 }
