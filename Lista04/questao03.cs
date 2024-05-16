@@ -2,7 +2,7 @@ using System;
 public class Questao03
 {
     public void Rodar()
-    {
+     {
 //Declarando variáveis para receber os 3 números digitados
         int x, y, z, N = 0;
         
@@ -10,10 +10,8 @@ public class Questao03
         Console.WriteLine("Digite o número de conjuntos que irá usar");
         N = int.Parse (Console.ReadLine());
         
-//Criando comando do while com for para os números serem armazenados em cada um dos N conjuntos 
-        do {
-            
-            for (int i; i <= N; i++) {
+//Criando comando for para os números serem armazenados em cada um dos N conjuntos 
+            for (int i = 0; i <= N; i++) {
 
 //Solicitando e registrando o número de conjuntos
                 Console.WriteLine("Digite o primeiro número do conjunto");
@@ -24,13 +22,12 @@ public class Questao03
                 
                 Console.WriteLine("Digite o terceiro número do conjunto");
                 z = int.Parse (Console.ReadLine());
+                
+//Acionando procedimento
+                ImprimirCrescente (x, y, z);
             }
         }
-        while (i <= N);
-
-//Acionando procedimento
-        ImprimirCrescente (x, y, z);
-
+        
 //Criando procedimento
         static void ImprimirCrescente (int x, int y, int z) {
             if (x > y && x > z && y > z) {
@@ -53,4 +50,3 @@ public class Questao03
             }
         }
     }
-}
