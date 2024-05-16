@@ -1,5 +1,5 @@
 using System;
-public class Questao01 {
+public class Questao01.cs {
     public static void Rodar() {
 
  int N = 0; //Variável para armazenar o número de alunos

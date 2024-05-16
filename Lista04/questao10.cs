@@ -1,5 +1,5 @@
 using System;
-public class questao10
+public class Questao10.cs
 {
     public void Rodar()
     {
