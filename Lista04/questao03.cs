@@ -1,7 +1,7 @@
 using System;
 public class Questao03
 {
-    public void Rodar()
+    public static void Rodar()
      {
 //Declarando variáveis para receber os 3 números digitados
         int x, y, z, N = 0;
