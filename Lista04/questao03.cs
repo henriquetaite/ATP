@@ -11,7 +11,7 @@ public class Questao03
         N = int.Parse (Console.ReadLine());
         
 //Criando comando for para os números serem armazenados em cada um dos N conjuntos 
-            for (int i = 0; i <= N; i++) {
+            for (int i = 0; i < N; i++) {
 
 //Solicitando e registrando o número de conjuntos
                 Console.WriteLine("Digite o primeiro número do conjunto");
@@ -47,6 +47,27 @@ public class Questao03
             }
             else if (x > z && x > y && z > y) {
                 Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", y, z, x);
+            }
+            else if (x == z && x > y) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", y, z, x);
+            }
+            else if (x == z && x < y) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", z, x, y);
+            }
+            else if (y == z && x < y) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", x, y, z);
+            }
+            else if (y == z && x > y) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", z, y, x);
+            }
+            else if (y == x && x > z) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", z, y, x);
+            }
+            else if (y == x && x < z) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", y, x, z);
+            }
+            else if (y == x && x == z) {
+                Console.WriteLine ("A ordem crescente dos três números que você digitou é: {0}, {1}, {2}", y, x, z);
             }
         }
     }
