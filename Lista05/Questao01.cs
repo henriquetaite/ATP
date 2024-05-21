@@ -8,9 +8,11 @@ public class Questao01 {
 //Gerando números aleatórios para preencher o vetor
         Random randNum = new Random();
 
-//Preenchendo o vetor com função for
+//Definindo o tamanho do vetor com suas posições
         for (int i = 0; i < 20; i++) {
-            randNum.NextDouble();
+
+//Usando função .Next para preencher cada posição do vetor com um número aleatório
+            N[i] = randNum.NextDouble();
         }
     }
 }
