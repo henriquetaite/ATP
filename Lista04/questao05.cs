@@ -4,7 +4,7 @@ public class Questao05
     public static void Rodar()
     {
 //Declarando variáveis
-        int a, b, mdc;
+        int a = 0, b = 0, mdc = 0;
 
 //Solicitando números ao usuário
         Console.WriteLine ("Digite 2 números para saber o MDC");

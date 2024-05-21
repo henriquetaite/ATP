@@ -4,7 +4,7 @@ public class Questao04
     public static void Rodar()
     {
 //Declarando variáveis para armazenar os lados do possível triângulo
-        double x, y, z;
+        double x = 0, y = 0, z = 0;
         string opcao;
 
 //Solicitando valores ao usuário e registrando
