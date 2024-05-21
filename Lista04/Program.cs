@@ -10,34 +10,44 @@ class Program
         switch (questao)
         {
             case 1:
-                questao01.Questao();
+                Questao01 questao01 = new Questao01();
+                questao01.Rodar();
                 break;
             case 2:
-                questao02.Questao();
+                Questao02 questao02 = new Questao02();
+                questao02.Rodar();
                 break;
             case 3:
-                questao03.Questao();
+                Questao03 questao03 = new Questao03();
+                questao03.Rodar();
                 break;
             case 4:
-                questao04.Questao();
+                Questao04 questao04 = new Questao04();
+                questao04.Rodar();
                 break;
             case 5:
-                questao05.Questao();
+                Questao05 questao05 = new Questao05();
+                questao05.Rodar();
                 break;
             case 6:
-                questao06.Questao();
+                Questao06 questao06 = new Questao06();
+                questao06.Rodar();
                 break;
             case 7:
-                questao07.Questao();
+                Questao07 questao07 = new Questao07();
+                questao07.Rodar();
                 break;
             case 8:
-                questao08.Questao();
+                Questao08 questao08 = new Questao08();
+                questao08.Rodar();
                 break;
             case 9:
-                questao09.Questao();
+                Questao09 questao09 = new Questao09();
+                questao09.Rodar();
                 break;
             case 10:
-                questao10.Questao();
+                Questao10 questao10 = new Questao10();
+                questao10.Rodar();
                 break;
             default:
                 Console.WriteLine("Questão inválida.");
