@@ -5,9 +5,6 @@ public class Questao03 {
 //Declarando e inicializando vetore X
         double [] vetorX = new double [10];
 
-//Declarando e inicializando vetor com números negativos
-        double [] vetorNeg = new double [int N];
-
 //Acionando Procedimento de preencher vetor
         PreencherVetorX (vetorX);
 
@@ -15,10 +12,10 @@ public class Questao03 {
         ExibindoVetor (vetorX);
 
 //Acionando Procedimento de exibir um vetor
-        ExibirVetores (vetorX, vetorNeg);
+        ExibirVetores (vetorX);
     }
 //Criando Procedimento para preencher vetorX
-    public static void PreencherVetorX (double vetorX) {
+    public static void PreencherVetorX (double [] vetorX) {
         Random randNum = new Random ();
         for (int i = 0; i < 10; i++) {
             vetorX [i] = randNum.NextDouble ();
@@ -39,10 +36,14 @@ public class Questao03 {
 //Declarando novo vetor que vai receber números negativos
         double [] vetorNeg = new double [N];
 
+//Declarando variável index para receber os valores negativos
+        int index = 0;
+
 //Criando outro foreach para adicionar os números negativos ao novo vetor
         foreach (double item in vetorX) {
             if (item < 0) {
-                vetorNeg [N] += item [i];
+                vetorNeg [index] = item;
+                index++;
             }
         }
         return vetorNeg;
@@ -59,10 +60,16 @@ public class Questao03 {
 
 //Criando comando if para exibir conforme o desejo do usuário
         if (opcao == "X" || opcao == "x") {
-            Console.WriteLine (vetorX);
+            Console.WriteLine ("vetorX");
+            foreach (double item in vetorX) {
+                Console.Write (item + " ");
+            }
         }
         else if (opcao == "N" || opcao == "n") {
-            Console.WriteLine (vetorNeg);
+            Console.WriteLine ("vetorNeg: ");
+            foreach (double item in vetorNeg) {
+                Console.Write (item + " ");
+            }
         }
         else {
             Console.WriteLine ("Opção inválida! Digite X ou N");
