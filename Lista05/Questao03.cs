@@ -2,51 +2,70 @@ using System;
 public class Questao03 {
     public static void Rodar() {
 
- int N = 0; //Variável para armazenar o número de alunos
+//Declarando e inicializando vetore X
+        double [] vetorX = new double [10];
 
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
+//Declarando e inicializando vetor com números negativos
+        double [] vetorNeg = new double [int N];
 
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+//Acionando Procedimento de preencher vetor
+        PreencherVetorX (vetorX);
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
+//Acionando Função de retornar novo vetor com valores negativos
+        ExibindoVetor (vetorX);
 
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
-
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
-
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
-            }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+//Acionando Procedimento de exibir um vetor
+        ExibirVetores (vetorX, vetorNeg);
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+//Criando Procedimento para preencher vetorX
+    public static void PreencherVetorX (double vetorX) {
+        Random randNum = new Random ();
+        for (int i = 0; i < 10; i++) {
+            vetorX [i] = randNum.NextDouble ();
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
+    }
+//Criando função para retornar novo vetor com valores negativos
+    public static double [] ExibindoVetor (double [] vetorX) {
+
+//Declarando variável que vai contar quantos números negativos têm
+        int N = 0;
+
+//Criando comando foreach para pesquisar dentro do vetorX e contar variáveis negativas
+        foreach (double item in vetorX) {
+            if (item < 0) {
+                N++;
+            }
         }
+//Declarando novo vetor que vai receber números negativos
+        double [] vetorNeg = new double [N];
+
+//Criando outro foreach para adicionar os números negativos ao novo vetor
+        foreach (double item in vetorX) {
+            if (item < 0) {
+                vetorNeg [N] += item [i];
+            }
+        }
+        return vetorNeg;
+    }
+//Criando procedimento para exibir um vetor
+    public static void ExibirVetores (double [] vetorX, double [] vetorNeg) {
+
+//Declarando variável para opção do usuário
+        string opcao;
+
+//Perguntando ao usuário qual vetor ele quer que seja exibido
+        Console.WriteLine ("Qual vetor deseja ver, X ou N?");
+        opcao = Console.ReadLine();
+
+//Criando comando if para exibir conforme o desejo do usuário
+        if (opcao == "X" || opcao == "x") {
+            Console.WriteLine (vetorX);
+        }
+        else if (opcao == "N" || opcao == "n") {
+            Console.WriteLine (vetorNeg);
+        }
+        else {
+            Console.WriteLine ("Opção inválida! Digite X ou N");
+        }
+    }
 }
