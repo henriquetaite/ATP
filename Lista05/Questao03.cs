@@ -9,20 +9,19 @@ public class Questao03 {
         PreencherVetorX (vetorX);
 
 //Acionando Função de retornar novo vetor com valores negativos
-        ExibindoVetor (vetorX);
-
-//Acionando Procedimento de exibir um vetor
-        ExibirVetores (vetorX);
+        double [] vetorNeg = ExibirVetorNeg (vetorX);
     }
 //Criando Procedimento para preencher vetorX
     public static void PreencherVetorX (double [] vetorX) {
         Random randNum = new Random ();
         for (int i = 0; i < 10; i++) {
-            vetorX [i] = randNum.NextDouble ();
+            vetorX [i] = randNum.NextDouble () * 200 - 100;
         }
+//Acionando Procedimento de exibir um vetor
+        ExibirVetorX (vetorX);
     }
 //Criando função para retornar novo vetor com valores negativos
-    public static double [] ExibindoVetor (double [] vetorX) {
+    public static double [] ExibirVetorNeg (double [] vetorX) {
 
 //Declarando variável que vai contar quantos números negativos têm
         int N = 0;
@@ -46,33 +45,24 @@ public class Questao03 {
                 index++;
             }
         }
+//Comando return para retornar vetor
         return vetorNeg;
+        
+//Acionando Procedimento de exibir um vetor
+        ExibirVetorNeg (vetorNeg);
     }
-//Criando procedimento para exibir um vetor
-    public static void ExibirVetores (double [] vetorX, double [] vetorNeg) {
-
-//Declarando variável para opção do usuário
-        string opcao;
-
-//Perguntando ao usuário qual vetor ele quer que seja exibido
-        Console.WriteLine ("Qual vetor deseja ver, X ou N?");
-        opcao = Console.ReadLine();
-
-//Criando comando if para exibir conforme o desejo do usuário
-        if (opcao == "X" || opcao == "x") {
-            Console.WriteLine ("vetorX");
+//Criando procedimento para exibir vetorX
+    public static void ExibirVetorX (double [] vetorX) {
+            Console.WriteLine ("vetorX: ");
             foreach (double item in vetorX) {
                 Console.Write (item + " ");
             }
         }
-        else if (opcao == "N" || opcao == "n") {
-            Console.WriteLine ("vetorNeg: ");
-            foreach (double item in vetorNeg) {
-                Console.Write (item + " ");
-            }
-        }
-        else {
-            Console.WriteLine ("Opção inválida! Digite X ou N");
+//Criando procedimento para exibir vetorNeg
+    public static void ExibirVetorNeg (double [] vetorNeg) {
+        Console.WriteLine ("vetorNeg: ");
+        foreach (double item in vetorNeg) {
+            Console.Write (item + " ");
         }
     }
 }
