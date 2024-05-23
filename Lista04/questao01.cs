@@ -7,7 +7,7 @@ public class Questao01
         int N = 0; //Variável para armazenar o número de alunos
 
         //Solicitando e registrando a quantidade de alunos
-        Console.WriteLine("Digite a quantidade de alunos");
+        Console.WriteLine("Digite a quantidade de alunos: ");
         N = int.Parse(Console.ReadLine());
 
         //Criando comando for para registrar 3 notas para cada aluno
