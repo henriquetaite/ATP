@@ -1,7 +1,7 @@
 using System;
 public class Questao06
 {
-    public static void Rodar()
+    public void Rodar()
     {
 //Declarando variáveis
         int x;

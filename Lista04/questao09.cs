@@ -1,7 +1,7 @@
 using System;
 public class Questao09
 {
-    public static void Rodar()
+    public void Rodar()
     {
 //Declarando variáveis: total (total de alunos) e soma (soma das notas entre 6 e 10)
         double nota = 0, media = 0, soma = 0;

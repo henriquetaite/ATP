@@ -1,7 +1,7 @@
 using System;
 public class Questao04
 {
-    public static void Rodar()
+    public void Rodar()
     {
 //Declarando variáveis para armazenar os lados do possível triângulo
         double x = 0, y = 0, z = 0;

@@ -1,8 +1,8 @@
 ﻿using System;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         Console.WriteLine("Digite o número da questão que deseja executar (1-10):");
         int questao = int.Parse(Console.ReadLine());

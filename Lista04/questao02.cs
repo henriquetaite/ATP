@@ -1,7 +1,7 @@
 using System;
 public class Questao02
 {
-    public static void Rodar() {
+    public void Rodar() {
 
 //Declarando variáveis
         double salario = 0, total = 0;
