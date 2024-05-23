@@ -13,3 +13,11 @@ C:\Users\888563\Documents\ATP\Lista 02\obj\Debug\net8.0\refint\Lista 02.dll
 C:\Users\888563\Documents\ATP\Lista 02\obj\Debug\net8.0\Lista 02.pdb
 C:\Users\888563\Documents\ATP\Lista 02\obj\Debug\net8.0\Lista 02.genruntimeconfig.cache
 C:\Users\888563\Documents\ATP\Lista 02\obj\Debug\net8.0\ref\Lista 02.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.AssemblyInfoInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.AssemblyInfo.cs
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.csproj.CoreCompileInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.sourcelink.json
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\refint\Lista 02.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista02\obj\Debug\net8.0\Lista 02.pdb
