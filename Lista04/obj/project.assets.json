@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista04\\Lista04.csproj",
+      "projectUniqueName": "C:\\Users\\USUÁRIO\\Documents\\ATP\\Lista04\\Lista04.csproj",
       "projectName": "Lista04",
-      "projectPath": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista04\\Lista04.csproj",
+      "projectPath": "C:\\Users\\USUÁRIO\\Documents\\ATP\\Lista04\\Lista04.csproj",
       "packagesPath": "C:\\Users\\USUÁRIO\\.nuget\\packages\\",
-      "outputPath": "G:\\Meu Drive\\ADS\\2 PERÍODO\\ATP\\Listas\\ATP\\Lista04\\obj\\",
+      "outputPath": "C:\\Users\\USUÁRIO\\Documents\\ATP\\Lista04\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USUÁRIO\\AppData\\Roaming\\NuGet\\NuGet.Config"

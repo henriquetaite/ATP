@@ -6,3 +6,18 @@ G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.sour
 G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.dll
 G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\refint\Lista04.dll
 G:\Meu Drive\ADS\2 PERÍODO\ATP\Listas\ATP\Lista04\obj\Debug\net8.0\Lista04.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista04\bin\Debug\net8.0\Lista04.exe
+C:\Users\USUÁRIO\Documents\ATP\Lista04\bin\Debug\net8.0\Lista04.deps.json
+C:\Users\USUÁRIO\Documents\ATP\Lista04\bin\Debug\net8.0\Lista04.runtimeconfig.json
+C:\Users\USUÁRIO\Documents\ATP\Lista04\bin\Debug\net8.0\Lista04.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista04\bin\Debug\net8.0\Lista04.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.AssemblyInfoInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.AssemblyInfo.cs
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.csproj.CoreCompileInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.sourcelink.json
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\refint\Lista04.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\Lista04.genruntimeconfig.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista04\obj\Debug\net8.0\ref\Lista04.dll
