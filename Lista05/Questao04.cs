@@ -1,6 +1,6 @@
 using System;
 public class Questao04 {
-    public static void Rodar() {
+    public void Rodar() {
 
  int N = 0; //Variável para armazenar o número de alunos
 

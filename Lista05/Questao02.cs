@@ -1,6 +1,6 @@
 using System;
 public class Questao02 {
-    public static void Rodar() {
+    public void Rodar() {
 
 //Declarando e inicializando vetor que será usado em 2 procedimentos diferentes
         double [] vetorNotas = new double [10];

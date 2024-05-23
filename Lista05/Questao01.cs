@@ -1,6 +1,6 @@
 using System;
 public class Questao01 {
-    public static void Rodar() {
+    public void Rodar() {
 
 //Declarando vetor N com 20 posições
         double [] N = new double [20];
