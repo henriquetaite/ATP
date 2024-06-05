@@ -19,14 +19,14 @@ public class Questao03
     }
 
 //Criando Procedimento para preencher vetorX
-    public static void PreencherVetorX (double [] vetorX) {
+    public void PreencherVetorX (double [] vetorX) {
         Random randNum = new Random ();
         for (int i = 0; i < 10; i++) {
             vetorX [i] = randNum.NextDouble () * 200 - 100;
         }
     }
 //Criando função para retornar novo vetor com valores negativos
-    public static double [] CopiarVetorNeg (double [] vetorX) {
+    public double [] CopiarVetorNeg (double [] vetorX) {
 //Declarando variável que vai contar quantos números negativos têm
         int N = 0;
 //Criando comando foreach para pesquisar dentro do vetorX e contar variáveis negativas
@@ -51,14 +51,14 @@ public class Questao03
     }
 
 //Criando procedimento para exibir vetorX
-    public static void ExibirVetorX (double [] vetorX) {
+    public void ExibirVetorX (double [] vetorX) {
             Console.WriteLine ("vetorX: ");
             foreach (double item in vetorX) {
                 Console.Write (item + " ");
             }
         }
 //Criando procedimento para exibir vetorNeg
-    public static void ExibirVetorNeg (double [] vetorNeg) {
+    public void ExibirVetorNeg (double [] vetorNeg) {
         Console.WriteLine ("vetorNeg: ");
         foreach (double item in vetorNeg) {
             Console.Write (item + " ");

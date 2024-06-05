@@ -12,7 +12,7 @@ public class Questao02 {
         CalcularNotas (vetorNotas);
     }
 //Criando procedimento que vai preencher o vetor com as Notas
-        public static void PreencherNotas (double [] vetorNotas) {
+        public void PreencherNotas (double [] vetorNotas) {
 
 //Solicitando que o usuário preencha o vetor com as 10 notas
             Console.WriteLine ("Digite as notas dos 10 alunos");
@@ -24,7 +24,7 @@ public class Questao02 {
             }
         }
 //Criando procedimento que vai fazer os cálculos e contagem solicitados (acima = quantidade de alunos acima da média)
-        public static void CalcularNotas (double [] vetorNotas) {
+        public void CalcularNotas (double [] vetorNotas) {
 
 //Declarando variáveis necessárias para cálculos
             double soma = 0, media = 0;
