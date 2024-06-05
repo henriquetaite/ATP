@@ -1,13 +1,13 @@
 using System;
-public class Questao03 {
-    public void Rodar() {
+public class Questao03
+{
+    public void Rodar()
+    {
 
-//Declarando e inicializando vetore X
+       //Declarando e inicializando vetore X
         double [] vetorX = new double [10];
-
 //Acionando Procedimento de preencher vetor
         PreencherVetorX (vetorX);
-
 //Acionando Função de retornar novo vetor com valores negativos
         double [] vetorNeg = ExibirVetorNeg (vetorX);
     }
@@ -22,10 +22,8 @@ public class Questao03 {
     }
 //Criando função para retornar novo vetor com valores negativos
     public static double [] ExibirVetorNeg (double [] vetorX) {
-
 //Declarando variável que vai contar quantos números negativos têm
         int N = 0;
-
 //Criando comando foreach para pesquisar dentro do vetorX e contar variáveis negativas
         foreach (double item in vetorX) {
             if (item < 0) {
@@ -34,10 +32,8 @@ public class Questao03 {
         }
 //Declarando novo vetor que vai receber números negativos
         double [] vetorNeg = new double [N];
-
 //Declarando variável index para receber os valores negativos
         int index = 0;
-
 //Criando outro foreach para adicionar os números negativos ao novo vetor
         foreach (double item in vetorX) {
             if (item < 0) {
