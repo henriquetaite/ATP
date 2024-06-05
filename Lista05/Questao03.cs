@@ -4,24 +4,29 @@ public class Questao03
     public void Rodar()
     {
 
-       //Declarando e inicializando vetore X
+       //Declarando e inicializando vetor X
         double [] vetorX = new double [10];
+
 //Acionando Procedimento de preencher vetor
         PreencherVetorX (vetorX);
+
 //Acionando Função de retornar novo vetor com valores negativos
-        double [] vetorNeg = ExibirVetorNeg (vetorX);
+        double [] vetorNeg = CopiarVetorNeg (vetorX);
+
+//Acionando procedimentos de imprimir os vetores X e Neg
+        ExibirVetorX (vetorX);
+        ExibirVetorNeg (vetorNeg);
     }
+
 //Criando Procedimento para preencher vetorX
     public static void PreencherVetorX (double [] vetorX) {
         Random randNum = new Random ();
         for (int i = 0; i < 10; i++) {
             vetorX [i] = randNum.NextDouble () * 200 - 100;
         }
-//Acionando Procedimento de exibir um vetor
-        ExibirVetorX (vetorX);
     }
 //Criando função para retornar novo vetor com valores negativos
-    public static double [] ExibirVetorNeg (double [] vetorX) {
+    public static double [] CopiarVetorNeg (double [] vetorX) {
 //Declarando variável que vai contar quantos números negativos têm
         int N = 0;
 //Criando comando foreach para pesquisar dentro do vetorX e contar variáveis negativas
@@ -43,10 +48,8 @@ public class Questao03
         }
 //Comando return para retornar vetor
         return vetorNeg;
-        
-//Acionando Procedimento de exibir um vetor
-        ExibirVetorNeg (vetorNeg);
     }
+
 //Criando procedimento para exibir vetorX
     public static void ExibirVetorX (double [] vetorX) {
             Console.WriteLine ("vetorX: ");
