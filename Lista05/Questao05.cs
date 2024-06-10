@@ -1,52 +1,40 @@
 using System;
 public class Questao05 {
     public void Rodar() {
+//Declarando variáveis para receber números das tentativas
+        int a, b, c;
+//Declarando vetor sorteado
+        int [] vetorS = new int [3];
 
- int N = 0; //Variável para armazenar o número de alunos
-
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
-
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
-
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
-
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
-
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
-
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
+//Criando método do-while para executar os métodos até a condição especificada
+        do {
+//Acionando função
+            vetorS = SorteioVetorS (vetorS);
+//Acionando procedimento
+            PerguntandoUsuário (a, b, c);
+//Criando foreach para pesquisar os números do vetor e comparar com os do usuário
+            foreach (int item in vetorS) {
             }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+        }
+        while (a != item || b != item || c != item);
+//Criando comando condicional para gerar uma mensagem ao parar o programa
+        if (item == a || item == b || item == c) {
+            Console.WriteLine ("Você acertou um número!");
+        }
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+//Criando função de sorteio
+    public int [] SorteioVetorS (int [] vetorS) {
+        Random randNum = new Random ();
+        for (int i = 0; i < 3; i++) {
+            vetorS [i] = randNum.Next (10, 51);
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
-        }
+            return vetorS;
+    }
+//Criando procedimento de tentativa
+    public void PerguntandoUsuário (int a, int b, int c) {
+        Console.WriteLine ("Digite 3 números de 10 a 50");
+        a = int.Parse (Console.ReadLine());
+        b = int.Parse (Console.ReadLine());
+        c = int.Parse (Console.ReadLine());
+    }
 }

@@ -47,14 +47,14 @@ public class Questao03
             }
         }
 //Comando return para retornar vetor
-        return vetorNeg;
+            return vetorNeg;
     }
 
 //Criando procedimento para exibir vetorX
     public void ExibirVetorX (double [] vetorX) {
-            Console.WriteLine ("vetorX: ");
-            foreach (double item in vetorX) {
-                Console.Write (item + " ");
+        Console.WriteLine ("vetorX: ");
+        foreach (double item in vetorX) {
+            Console.Write (item + " ");
             }
         }
 //Criando procedimento para exibir vetorNeg
