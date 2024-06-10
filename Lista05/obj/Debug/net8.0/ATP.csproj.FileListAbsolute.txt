@@ -1,0 +1,15 @@
+C:\Users\USUÁRIO\Documents\ATP\Lista05\bin\Debug\net8.0\ATP.exe
+C:\Users\USUÁRIO\Documents\ATP\Lista05\bin\Debug\net8.0\ATP.deps.json
+C:\Users\USUÁRIO\Documents\ATP\Lista05\bin\Debug\net8.0\ATP.runtimeconfig.json
+C:\Users\USUÁRIO\Documents\ATP\Lista05\bin\Debug\net8.0\ATP.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista05\bin\Debug\net8.0\ATP.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.AssemblyInfoInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.AssemblyInfo.cs
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.csproj.CoreCompileInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.sourcelink.json
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\refint\ATP.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ATP.genruntimeconfig.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista05\obj\Debug\net8.0\ref\ATP.dll
