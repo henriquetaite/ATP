@@ -5,14 +5,14 @@ public class Questao04 {
         int[] vetorX = new int[10];
         int[] vetorY = new int[10];
         
-        // Preenchendo os vetores X e Y
+// Preenchendo os vetores X e Y
         PreencherVetor(vetorX, "X");
         PreencherVetor(vetorY, "Y");
 
-        // Gerando o novo vetor Z com elementos intercalados de X e Y
+// Gerando o novo vetor Z com elementos intercalados de X e Y
         int[] vetorZ = IntercalarVetores(vetorX, vetorY);
 
-        // Exibindo os vetores
+// Exibindo os vetores
         Console.WriteLine("Vetor X:");
         ExibirVetor(vetorX);
 
@@ -23,7 +23,7 @@ public class Questao04 {
         ExibirVetor(vetorZ);
     }
 
-    // Procedimento para preencher um vetor com 10 elementos
+// Procedimento para preencher um vetor com 10 elementos
     public static void PreencherVetor(int[] vetor, string nome)
     {
         Random randNum = new Random();
@@ -33,7 +33,7 @@ public class Questao04 {
         }
     }
 
-    // Procedimento para exibir o conteúdo de um vetor
+// Procedimento para exibir o conteúdo de um vetor
     public static void ExibirVetor(int[] vetor)
     {
         foreach (int item in vetor)
@@ -43,7 +43,7 @@ public class Questao04 {
         Console.WriteLine();
     }
 
-    // Procedimento para intercalar dois vetores em um novo vetor
+// Procedimento para intercalar dois vetores em um novo vetor
     public static int[] IntercalarVetores(int[] vetorX, int[] vetorY)
     {
         int[] vetorZ = new int[vetorX.Length + vetorY.Length];
