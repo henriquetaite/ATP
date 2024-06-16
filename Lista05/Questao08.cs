@@ -2,51 +2,69 @@ using System;
 public class Questao08 {
     public void Rodar() {
 
- int N = 0; //Variável para armazenar o número de alunos
+// Declarar e preencher a matriz 4x4
+        int[,] matriz = new int[4, 4];
+        PreencherMatriz(matriz);
 
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
+// Imprimir a matriz
+        Console.WriteLine("Matriz 4x4:");
+        ImprimirMatriz(matriz);
 
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+// Calcular e imprimir a soma dos elementos abaixo da diagonal principal
+        int somaAbaixoDiagonalPrincipal = SomaAbaixoDiagonalPrincipal(matriz);
+        Console.WriteLine("Soma dos elementos abaixo da diagonal principal: " + somaAbaixoDiagonalPrincipal);
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
-
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
-
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
-
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
-            }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+// Imprimir os elementos da diagonal principal
+        Console.WriteLine("Elementos da diagonal principal:");
+        ImprimirDiagonalPrincipal(matriz);
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+
+// Procedimento para preencher a matriz 4x4 com valores aleatórios
+    public static void PreencherMatriz(int[,] matriz)
+    {
+        Random rand = new Random();
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
+            }
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
+    }
+
+// Procedimento para imprimir a matriz
+    public static void ImprimirMatriz(int[,] matriz)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
         }
+    }
+
+// Função para calcular a soma dos elementos abaixo da diagonal principal
+    public static int SomaAbaixoDiagonalPrincipal(int[,] matriz)
+    {
+        int soma = 0;
+        for (int i = 1; i < 4; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                soma += matriz[i, j];
+            }
+        }
+        return soma;
+    }
+
+// Procedimento para imprimir os elementos da diagonal principal
+    public static void ImprimirDiagonalPrincipal(int[,] matriz)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Console.WriteLine(matriz[i, i]);
+        }
+    }
 }

@@ -2,51 +2,103 @@ using System;
 public class Questao10 {
     public void Rodar() {
 
- int N = 0; //Variável para armazenar o número de alunos
+// Declarar e preencher a matriz M(10,10)
+        int[,] matrizM = new int[10, 10];
+        PreencherMatriz(matrizM);
 
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
+// Imprimir a matriz original
+        Console.WriteLine("Matriz Original:");
+        ImprimirMatriz(matrizM);
 
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+// Trocar a linha 2 com a linha 8
+        TrocarLinhas(matrizM, 2, 8);
+        Console.WriteLine("\nMatriz após trocar a linha 2 com a linha 8:");
+        ImprimirMatriz(matrizM);
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
+// Trocar a coluna 4 com a coluna 10
+        TrocarColunas(matrizM, 4, 9);
+        Console.WriteLine("\nMatriz após trocar a coluna 4 com a coluna 10:");
+        ImprimirMatriz(matrizM);
 
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
+// Trocar a diagonal principal com a diagonal secundária
+        TrocarDiagonais(matrizM);
+        Console.WriteLine("\nMatriz após trocar a diagonal principal com a diagonal secundária:");
+        ImprimirMatriz(matrizM);
 
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
-
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
-            }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+// Trocar a linha 5 com a coluna 10
+        TrocarLinhaComColuna(matrizM, 5, 9);
+        Console.WriteLine("\nMatriz após trocar a linha 5 com a coluna 10:");
+        ImprimirMatriz(matrizM);
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+
+// Procedimento para preencher uma matriz 10x10 com valores aleatórios
+    public static void PreencherMatriz(int[,] matriz)
+    {
+        Random rand = new Random();
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
+            }
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
+    }
+
+// Procedimento para imprimir uma matriz
+    public static void ImprimirMatriz(int[,] matriz)
+    {
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
         }
+    }
+
+// Procedimento para trocar duas linhas de uma matriz
+    public static void TrocarLinhas(int[,] matriz, int linha1, int linha2)
+    {
+        for (int i = 0; i < matriz.GetLength(1); i++)
+        {
+            int temp = matriz[linha1, i];
+            matriz[linha1, i] = matriz[linha2, i];
+            matriz[linha2, i] = temp;
+        }
+    }
+
+// Procedimento para trocar duas colunas de uma matriz
+    public static void TrocarColunas(int[,] matriz, int coluna1, int coluna2)
+    {
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            int temp = matriz[i, coluna1];
+            matriz[i, coluna1] = matriz[i, coluna2];
+            matriz[i, coluna2] = temp;
+        }
+    }
+
+// Procedimento para trocar a diagonal principal com a diagonal secundária
+    public static void TrocarDiagonais(int[,] matriz)
+    {
+        int n = matriz.GetLength(0);
+        for (int i = 0; i < n; i++)
+        {
+            int temp = matriz[i, i];
+            matriz[i, i] = matriz[i, n - 1 - i];
+            matriz[i, n - 1 - i] = temp;
+        }
+    }
+
+// Procedimento para trocar uma linha com uma coluna de uma matriz
+    public static void TrocarLinhaComColuna(int[,] matriz, int linha, int coluna)
+    {
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            int temp = matriz[linha, i];
+            matriz[linha, i] = matriz[i, coluna];
+            matriz[i, coluna] = temp;
+        }
+    }
 }

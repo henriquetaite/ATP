@@ -3,81 +3,37 @@ public class Questao09
 {
     public void Rodar()
     {
-// Declarar e preencher as matrizes A e B
-        int[,] matrizA = new int[4, 6];
-        int[,] matrizB = new int[4, 6];
+//Declarando variáveis: total (total de alunos) e soma (soma das notas entre 6 e 10)
+        double nota = 0, media = 0, soma = 0;
+        int total = 0;
 
-        PreencherMatriz(matrizA);
-        PreencherMatriz(matrizB);
+//Criando comando do while para registrar várias notas
+       do {
 
-// Imprimir as matrizes A e B
-        Console.WriteLine("Matriz A:");
-        ImprimirMatriz(matrizA);
-        Console.WriteLine("\nMatriz B:");
-        ImprimirMatriz(matrizB);
+//Solicitando notas ao usuário
+            Console.WriteLine ("Digite as notas dos alunos ou um número fora do intervalo 0 a 10 para parar");
+            nota = double.Parse (Console.ReadLine());
 
-// Calcular e imprimir a matriz S (soma de A e B)
-        int[,] matrizS = SomaMatrizes(matrizA, matrizB);
-        Console.WriteLine("\nMatriz S (Soma de A e B):");
-        ImprimirMatriz(matrizS);
-
-// Calcular e imprimir a matriz D (diferença de A e B)
-        int[,] matrizD = DiferencaMatrizes(matrizA, matrizB);
-        Console.WriteLine("\nMatriz D (Diferença de A e B):");
-        ImprimirMatriz(matrizD);
-    }
-
-// Procedimento para preencher uma matriz 4x6 com valores aleatórios
-    public static void PreencherMatriz(int[,] matriz)
-    {
-        Random rand = new Random();
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
-            }
+//Criando comando if para ler e calcular somente notas entre 6 e 10
+        if (nota >= 6 && nota <= 10) {
+            soma += nota;
+            total++;
         }
-    }
-
-// Procedimento para imprimir uma matriz
-    public static void ImprimirMatriz(int[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
+//Criando condicional para acionar a função quando um valor fora do intervalo for digitado
+            if (nota < 0 || nota > 10) {
+                media = CalcularMedia (nota, media, total, soma);
+                Console.WriteLine ("A média dos alunos que obtiveram notas entre 6 e 10 é: {0}", media);
             }
-            Console.WriteLine();
-        }
+       }
+        while (nota >= 0 && nota <= 10);
     }
+//Criando função para calcular média das notas maiores que 6
+    public static double CalcularMedia (double nota, double media, int total, double soma) {
 
-// Função para calcular a soma de duas matrizes
-    public static int[,] SomaMatrizes(int[,] matrizA, int[,] matrizB)
-    {
-        int[,] matrizS = new int[matrizA.GetLength(0), matrizA.GetLength(1)];
-        for (int i = 0; i < matrizA.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrizA.GetLength(1); j++)
-            {
-                matrizS[i, j] = matrizA[i, j] + matrizB[i, j];
-            }
-        }
-        return matrizS;
-    }
+//Fazendo cálculo da média
+        media = soma / total;
 
-// Função para calcular a diferença de duas matrizes
-    public static int[,] DiferencaMatrizes(int[,] matrizA, int[,] matrizB)
-    {
-        int[,] matrizD = new int[matrizA.GetLength(0), matrizA.GetLength(1)];
-        for (int i = 0; i < matrizA.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrizA.GetLength(1); j++)
-            {
-                matrizD[i, j] = matrizA[i, j] - matrizB[i, j];
-            }
-        }
-        return matrizD;
+//Fazendo comando return para retornar o valor da média 
+        return media;
     }
 }

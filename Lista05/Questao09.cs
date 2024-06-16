@@ -2,51 +2,81 @@ using System;
 public class Questao09 {
     public void Rodar() {
 
- int N = 0; //Variável para armazenar o número de alunos
+// Declarar e preencher as matrizes A e B
+        int[,] matrizA = new int[4, 6];
+        int[,] matrizB = new int[4, 6];
 
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
+        PreencherMatriz(matrizA);
+        PreencherMatriz(matrizB);
 
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+// Imprimir as matrizes A e B
+        Console.WriteLine("Matriz A:");
+        ImprimirMatriz(matrizA);
+        Console.WriteLine("\nMatriz B:");
+        ImprimirMatriz(matrizB);
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
+// Calcular e imprimir a matriz S (soma de A e B)
+        int[,] matrizS = SomaMatrizes(matrizA, matrizB);
+        Console.WriteLine("\nMatriz S (Soma de A e B):");
+        ImprimirMatriz(matrizS);
 
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
-
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
-
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
-            }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+// Calcular e imprimir a matriz D (diferença de A e B)
+        int[,] matrizD = DiferencaMatrizes(matrizA, matrizB);
+        Console.WriteLine("\nMatriz D (Diferença de A e B):");
+        ImprimirMatriz(matrizD);
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+
+// Procedimento para preencher uma matriz 4x6 com valores aleatórios
+    public static void PreencherMatriz(int[,] matriz)
+    {
+        Random rand = new Random();
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
+            }
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
+    }
+
+// Procedimento para imprimir uma matriz
+    public static void ImprimirMatriz(int[,] matriz)
+    {
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
         }
+    }
+
+// Função para calcular a soma de duas matrizes
+    public static int[,] SomaMatrizes(int[,] matrizA, int[,] matrizB)
+    {
+        int[,] matrizS = new int[matrizA.GetLength(0), matrizA.GetLength(1)];
+        for (int i = 0; i < matrizA.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrizA.GetLength(1); j++)
+            {
+                matrizS[i, j] = matrizA[i, j] + matrizB[i, j];
+            }
+        }
+        return matrizS;
+    }
+
+// Função para calcular a diferença de duas matrizes
+    public static int[,] DiferencaMatrizes(int[,] matrizA, int[,] matrizB)
+    {
+        int[,] matrizD = new int[matrizA.GetLength(0), matrizA.GetLength(1)];
+        for (int i = 0; i < matrizA.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrizA.GetLength(1); j++)
+            {
+                matrizD[i, j] = matrizA[i, j] - matrizB[i, j];
+            }
+        }
+        return matrizD;
+    }
 }

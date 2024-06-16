@@ -2,51 +2,112 @@ using System;
 public class Questao07 {
     public void Rodar() {
 
- int N = 0; //Variável para armazenar o número de alunos
+// Declarar e preencher a matriz 5x5
+        int[,] matriz = new int[5, 5];
+        PreencherMatriz(matriz);
 
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
+// Imprimir a matriz
+        Console.WriteLine("Matriz M:");
+        ImprimirMatriz(matriz);
 
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+// Calcular e imprimir cada uma das somas solicitadas
+        int somaLinha4 = SomaLinha4(matriz);
+        Console.WriteLine("Soma da linha 4: " + somaLinha4);
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
+        int somaColuna2 = SomaColuna2(matriz);
+        Console.WriteLine("Soma da coluna 2: " + somaColuna2);
 
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
+        int somaDiagonalPrincipal = SomaDiagonalPrincipal(matriz);
+        Console.WriteLine("Soma da diagonal principal: " + somaDiagonalPrincipal);
 
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
+        int somaDiagonalSecundaria = SomaDiagonalSecundaria(matriz);
+        Console.WriteLine("Soma da diagonal secundária: " + somaDiagonalSecundaria);
 
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
-            }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+        int somaTodosElementos = SomaTodosElementos(matriz);
+        Console.WriteLine("Soma de todos os elementos da matriz: " + somaTodosElementos);
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+
+// Procedimento para preencher a matriz 5x5 com valores aleatórios
+    public static void PreencherMatriz(int[,] matriz)
+    {
+        Random rand = new Random();
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
+            }
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
+    }
+
+// Procedimento para imprimir a matriz
+    public static void ImprimirMatriz(int[,] matriz)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
         }
+    }
+
+// Função para calcular a soma da linha 4 (índice 3)
+    public static int SomaLinha4(int[,] matriz)
+    {
+        int soma = 0;
+        for (int j = 0; j < 5; j++)
+        {
+            soma += matriz[3, j];
+        }
+        return soma;
+    }
+
+// Função para calcular a soma da coluna 2 (índice 1)
+    public static int SomaColuna2(int[,] matriz)
+    {
+        int soma = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            soma += matriz[i, 1];
+        }
+        return soma;
+    }
+
+// Função para calcular a soma da diagonal principal
+    public static int SomaDiagonalPrincipal(int[,] matriz)
+    {
+        int soma = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            soma += matriz[i, i];
+        }
+        return soma;
+    }
+
+// Função para calcular a soma da diagonal secundária
+    public static int SomaDiagonalSecundaria(int[,] matriz)
+    {
+        int soma = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            soma += matriz[i, 4 - i];
+        }
+        return soma;
+    }
+
+// Função para calcular a soma de todos os elementos da matriz
+    public static int SomaTodosElementos(int[,] matriz)
+    {
+        int soma = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                soma += matriz[i, j];
+            }
+        }
+        return soma;
+    }
 }

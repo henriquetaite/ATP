@@ -3,112 +3,45 @@ public class Questao07
 {
     public void Rodar()
     {
-// Declarar e preencher a matriz 5x5
-        int[,] matriz = new int[5, 5];
-        PreencherMatriz(matriz);
+//Declarando variáveis
+        int media, N;
 
-// Imprimir a matriz
-        Console.WriteLine("Matriz M:");
-        ImprimirMatriz(matriz);
+//Solicitando quantidade N de alunos
+        Console.WriteLine ("Quantas médias quer registrar?");
+        N = int.Parse (Console.ReadLine());
 
-// Calcular e imprimir cada uma das somas solicitadas
-        int somaLinha4 = SomaLinha4(matriz);
-        Console.WriteLine("Soma da linha 4: " + somaLinha4);
+//Criando comando for para ler somente a quantidade de médias informada
+        for (int i = 1; i <= N; i++) {
 
-        int somaColuna2 = SomaColuna2(matriz);
-        Console.WriteLine("Soma da coluna 2: " + somaColuna2);
+//Solicitando e registrando média
+        Console.WriteLine ("Digite a média do aluno");
+        media = int.Parse (Console.ReadLine());
 
-        int somaDiagonalPrincipal = SomaDiagonalPrincipal(matriz);
-        Console.WriteLine("Soma da diagonal principal: " + somaDiagonalPrincipal);
-
-        int somaDiagonalSecundaria = SomaDiagonalSecundaria(matriz);
-        Console.WriteLine("Soma da diagonal secundária: " + somaDiagonalSecundaria);
-
-        int somaTodosElementos = SomaTodosElementos(matriz);
-        Console.WriteLine("Soma de todos os elementos da matriz: " + somaTodosElementos);
+//Acionando o procedimento
+        ConceituandoMedia (media);
     }
+}
+//Criando procedimento para ler cada média
+    static void ConceituandoMedia (int media) {
 
-// Procedimento para preencher a matriz 5x5 com valores aleatórios
-    public static void PreencherMatriz(int[,] matriz)
-    {
-        Random rand = new Random();
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
-            }
+//Criando condicional para conceituar dentro dos critérios
+        if (media <= 39 && media >= 0) {
+            Console.WriteLine ("Conceito F");
         }
-    }
-
-// Procedimento para imprimir a matriz
-    public static void ImprimirMatriz(int[,] matriz)
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
+        else if (media >= 40 && media <= 59) {
+            Console.WriteLine ("Conceito E");
         }
-    }
-
-// Função para calcular a soma da linha 4 (índice 3)
-    public static int SomaLinha4(int[,] matriz)
-    {
-        int soma = 0;
-        for (int j = 0; j < 5; j++)
-        {
-            soma += matriz[3, j];
+        else if (media >= 60 && media <= 69) {
+            Console.WriteLine ("Conceito D");
         }
-        return soma;
-    }
-
-// Função para calcular a soma da coluna 2 (índice 1)
-    public static int SomaColuna2(int[,] matriz)
-    {
-        int soma = 0;
-        for (int i = 0; i < 5; i++)
-        {
-            soma += matriz[i, 1];
+        else if (media >= 70 && media <= 79) {
+            Console.WriteLine ("Conceito C");
         }
-        return soma;
-    }
-
-// Função para calcular a soma da diagonal principal
-    public static int SomaDiagonalPrincipal(int[,] matriz)
-    {
-        int soma = 0;
-        for (int i = 0; i < 5; i++)
-        {
-            soma += matriz[i, i];
+        else if (media >= 80 && media <= 89) {
+            Console.WriteLine ("Conceito B");
         }
-        return soma;
-    }
-
-// Função para calcular a soma da diagonal secundária
-    public static int SomaDiagonalSecundaria(int[,] matriz)
-    {
-        int soma = 0;
-        for (int i = 0; i < 5; i++)
-        {
-            soma += matriz[i, 4 - i];
+        else if (media >= 90) {
+            Console.WriteLine ("Conceito A");
         }
-        return soma;
-    }
-
-// Função para calcular a soma de todos os elementos da matriz
-    public static int SomaTodosElementos(int[,] matriz)
-    {
-        int soma = 0;
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                soma += matriz[i, j];
-            }
-        }
-        return soma;
     }
 }

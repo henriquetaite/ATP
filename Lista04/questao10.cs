@@ -3,103 +3,45 @@ public class Questao10
 {
     public void Rodar()
     {
-// Declarar e preencher a matriz M(10,10)
-        int[,] matrizM = new int[10, 10];
-        PreencherMatriz(matrizM);
+//Declarando variáveis
+        int idade;
+        string categoria;
 
-// Imprimir a matriz original
-        Console.WriteLine("Matriz Original:");
-        ImprimirMatriz(matrizM);
+//Criando método do while para ler idades até o usuário encerrar
+        do {
 
-// Trocar a linha 2 com a linha 8
-        TrocarLinhas(matrizM, 2, 8);
-        Console.WriteLine("\nMatriz após trocar a linha 2 com a linha 8:");
-        ImprimirMatriz(matrizM);
+//Solicitando idade dos nadadores
+            Console.WriteLine ("Digite a idade do nadador para saber sua categoria ou N para encerrar");
+            idade = int.Parse (Console.ReadLine());
 
-// Trocar a coluna 4 com a coluna 10
-        TrocarColunas(matrizM, 4, 9);
-        Console.WriteLine("\nMatriz após trocar a coluna 4 com a coluna 10:");
-        ImprimirMatriz(matrizM);
-
-// Trocar a diagonal principal com a diagonal secundária
-        TrocarDiagonais(matrizM);
-        Console.WriteLine("\nMatriz após trocar a diagonal principal com a diagonal secundária:");
-        ImprimirMatriz(matrizM);
-
-// Trocar a linha 5 com a coluna 10
-        TrocarLinhaComColuna(matrizM, 5, 9);
-        Console.WriteLine("\nMatriz após trocar a linha 5 com a coluna 10:");
-        ImprimirMatriz(matrizM);
-    }
-
-// Procedimento para preencher uma matriz 10x10 com valores aleatórios
-    public static void PreencherMatriz(int[,] matriz)
-    {
-        Random rand = new Random();
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
-            }
+//Acionando a função que vai retornar a categoria
+            categoria = RetornarCategoria (idade);
+            Console.WriteLine ("Nadador categoria: {0}", categoria);
         }
+        while (idade >= 5);
     }
-
-// Procedimento para imprimir uma matriz
-    public static void ImprimirMatriz(int[,] matriz)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            for (int j = 0; j < matriz.GetLength(1); j++)
-            {
-                Console.Write(matriz[i, j] + "\t");
-            }
-            Console.WriteLine();
+//Criando função para reotornar categoria conforme idade
+    public static string RetornarCategoria (int idade) {
+        if (idade >= 5 && idade <= 7) {
+            return "F";
         }
-    }
-
-// Procedimento para trocar duas linhas de uma matriz
-    public static void TrocarLinhas(int[,] matriz, int linha1, int linha2)
-    {
-        for (int i = 0; i < matriz.GetLength(1); i++)
-        {
-            int temp = matriz[linha1, i];
-            matriz[linha1, i] = matriz[linha2, i];
-            matriz[linha2, i] = temp;
+        else if (idade >= 8 && idade <= 10) {
+            return "E";
         }
-    }
-
-// Procedimento para trocar duas colunas de uma matriz
-    public static void TrocarColunas(int[,] matriz, int coluna1, int coluna2)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            int temp = matriz[i, coluna1];
-            matriz[i, coluna1] = matriz[i, coluna2];
-            matriz[i, coluna2] = temp;
+        else if (idade >= 11 && idade <= 13) {
+            return "D";
         }
-    }
-
-// Procedimento para trocar a diagonal principal com a diagonal secundária
-    public static void TrocarDiagonais(int[,] matriz)
-    {
-        int n = matriz.GetLength(0);
-        for (int i = 0; i < n; i++)
-        {
-            int temp = matriz[i, i];
-            matriz[i, i] = matriz[i, n - 1 - i];
-            matriz[i, n - 1 - i] = temp;
+        else if (idade >= 14 && idade <= 15) {
+            return "C";
         }
-    }
-
-// Procedimento para trocar uma linha com uma coluna de uma matriz
-    public static void TrocarLinhaComColuna(int[,] matriz, int linha, int coluna)
-    {
-        for (int i = 0; i < matriz.GetLength(0); i++)
-        {
-            int temp = matriz[linha, i];
-            matriz[linha, i] = matriz[i, coluna];
-            matriz[i, coluna] = temp;
+        else if (idade >= 16 && idade <= 17) {
+            return "B";
+        }
+        else if (idade >= 18) {
+            return "A";
+        }
+        else {
+            return "Idade fora do intervalo.";
         }
     }
 }
