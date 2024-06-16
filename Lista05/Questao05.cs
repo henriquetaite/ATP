@@ -6,13 +6,13 @@ public class Questao05 {
 
         Console.WriteLine("Tente adivinhar um dos números sorteados entre 10 e 50.");
 
-        // Lendo as tentativas do usuário até que ele acerte um número sorteado
+// Lendo as tentativas do usuário até que ele acerte um número sorteado
         TentarAdivinhar(numerosSorteados);
 
         Console.WriteLine("Você acertou um número sorteado!");
     }
 
-    // Função que sorteia 3 números entre 10 e 50 e retorna em um vetor
+// Função que sorteia 3 números entre 10 e 50 e retorna em um vetor
     public static int[] SortearNumeros()
     {
         Random rand = new Random();
@@ -22,7 +22,7 @@ public class Questao05 {
         {
             numeros[i] = rand.Next(10, 51);
         }
-
+//Criando comando foreach para fazer pesquisa dentro do vetor
         Console.WriteLine("Números sorteados: ");
         foreach (int num in numeros)
         {
@@ -33,11 +33,12 @@ public class Questao05 {
         return numeros;
     }
 
-    // Procedimento que lê as tentativas do usuário até que ele acerte um número sorteado
+// Procedimento que lê as tentativas do usuário até que ele acerte um número sorteado
     public static void TentarAdivinhar(int[] numerosSorteados)
     {
         bool acertou = false;
-
+        
+//Criando comando while para interagir com usuário
         while (!acertou)
         {
             Console.WriteLine("Digite sua tentativa:");
