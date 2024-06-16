@@ -3,36 +3,69 @@ public class Questao08
 {
     public void Rodar()
     {
-//Declarando variáveis
-        int N;
-        double S = 0;
+// Declarar e preencher a matriz 4x4
+        int[,] matriz = new int[4, 4];
+        PreencherMatriz(matriz);
 
-//Solicitando e registrando N ao usuário
-        Console.WriteLine ("Informe um valor inteiro positivo");
-        N = int.Parse (Console.ReadLine());
+// Imprimir a matriz
+        Console.WriteLine("Matriz 4x4:");
+        ImprimirMatriz(matriz);
 
-//Acionando função
-            S = CalcularFuncao (N, S);
+// Calcular e imprimir a soma dos elementos abaixo da diagonal principal
+        int somaAbaixoDiagonalPrincipal = SomaAbaixoDiagonalPrincipal(matriz);
+        Console.WriteLine("Soma dos elementos abaixo da diagonal principal: " + somaAbaixoDiagonalPrincipal);
 
-//Imprimindo resultado de S
-            Console.WriteLine ("O valor de S em função de N é: {0}", S);
+// Imprimir os elementos da diagonal principal
+        Console.WriteLine("Elementos da diagonal principal:");
+        ImprimirDiagonalPrincipal(matriz);
+    }
 
-//Criando comando if para invalidar valores que não sejam positivos
-        if (N <= 0) {
-            Console.WriteLine ("Valor inválido! Digite outro");
-            N = int.Parse (Console.ReadLine());
-        }
-    }   
-//Criando função para retornar S
-        public static double CalcularFuncao (int N, double S) {
-
-//Criando comando for para fazer cálculos até N
-            for (int n = 2; n <= N; n++) {
-                double numerador = Math.Pow (N,2) + 1;
-                double denominador = N + 3;
-                S += numerador/denominador;
+// Procedimento para preencher a matriz 4x4 com valores aleatórios
+    public static void PreencherMatriz(int[,] matriz)
+    {
+        Random rand = new Random();
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                matriz[i, j] = rand.Next(1, 101); // Preenchendo a matriz com números aleatórios de 1 a 100
             }
-//Fazendo return para retornar valor final de S
-                return S;
         }
     }
+
+// Procedimento para imprimir a matriz
+    public static void ImprimirMatriz(int[,] matriz)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+
+// Função para calcular a soma dos elementos abaixo da diagonal principal
+    public static int SomaAbaixoDiagonalPrincipal(int[,] matriz)
+    {
+        int soma = 0;
+        for (int i = 1; i < 4; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                soma += matriz[i, j];
+            }
+        }
+        return soma;
+    }
+
+// Procedimento para imprimir os elementos da diagonal principal
+    public static void ImprimirDiagonalPrincipal(int[,] matriz)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Console.WriteLine(matriz[i, i]);
+        }
+    }
+}
