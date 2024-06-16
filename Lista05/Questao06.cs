@@ -2,51 +2,85 @@ using System;
 public class Questao06 {
     public void Rodar() {
 
- int N = 0; //Variável para armazenar o número de alunos
+// Declarar e preencher o vetor com temperaturas de outubro
+        double[] temperaturas = new double[31];
+        PreencherTemperaturas(temperaturas);
 
-//Solicitando e registrando a quantidade de alunos
-    Console.WriteLine ("Digite a quantidade de alunos");
-    N = int.Parse (Console.ReadLine());
+// Calcular e imprimir a menor e a maior temperatura
+        double menorTemp = CalcularMenorTemperatura(temperaturas);
+        double maiorTemp = CalcularMaiorTemperatura(temperaturas);
+        Console.WriteLine("Menor temperatura: " + menorTemp + "°C");
+        Console.WriteLine("Maior temperatura: " + maiorTemp + "°C");
 
-//Criando comando for para registrar 3 notas para cada aluno
-    for (int i = 0; i < N; i++) { //i < N porque começa do 0 e é int, aí vai contar 1 a menos que N no final
+// Calcular e imprimir a temperatura média
+        double temperaturaMedia = CalcularTemperaturaMedia(temperaturas);
+        Console.WriteLine("Temperatura média: " + temperaturaMedia + "°C");
 
-//Declarando variáveis
-    double x = 0, y = 0, z = 0; //Variáveis para armazenar as notas
-    char opcao; //Variável para armazenar a opção de média desejada pelo usuário
-
-//Solicitando e registrando as notas
-        Console.WriteLine ($"Aluno {i + 1}:");
-        Console.WriteLine ("Digite 3 notas");
-        x = double.Parse (Console.ReadLine());
-        y = double.Parse (Console.ReadLine());
-        z = double.Parse (Console.ReadLine());
-
-//Solicitando o tipo de média que o usuário deseja
-        Console.WriteLine ("Digite 'A' para média aritmética e 'P' para média ponderada");
-        opcao = char.Parse (Console.ReadLine());
-
-//Criando condicional para fazer um procedimento para cada situação
-            if (opcao == 'A') {
-                CalcularMediaAritmetica (x, y, z);
-            }
-            else if (opcao == 'P') {
-                CalcularMediaPonderada (x, y, z);
-            }
-            else {
-                Console.WriteLine ("Opção inválida! Digite 'A' ou 'P' ");
-                opcao = char.Parse (Console.ReadLine());
-            }
-        } 
+// Calcular e imprimir o número de dias com temperatura inferior à média
+        int diasAbaixoMedia = ContarDiasAbaixoMedia(temperaturas, temperaturaMedia);
+        Console.WriteLine("Número de dias com temperatura abaixo da média: " + diasAbaixoMedia);
     }
-//Criando procedimento da média aritmética
-        static void CalcularMediaAritmetica (double x, double y, double z) {
-            double media = (x + y + z) / 3;
-            Console.WriteLine ("A média aritmética é {0}:", media); 
+
+// Função para preencher o vetor com temperaturas aleatórias entre 15°C e 40°C
+    public static void PreencherTemperaturas(double[] temperaturas)
+    {
+        Random rand = new Random();
+        for (int i = 0; i < temperaturas.Length; i++)
+        {
+            temperaturas[i] = rand.Next(15, 40) + rand.NextDouble(); // Gera um número aleatório entre 15 e 40 com casas decimais
         }
-//Criando procedimento da média ponderada
-        static void CalcularMediaPonderada (double x, double y, double z) {
-            double media = (x * 5 + y * 3 + z * 2) / (5 + 3 + 2);
-            Console.WriteLine ("A média ponderada é {0}:", media);
+    }
+
+// Função para calcular a menor temperatura
+    public static double CalcularMenorTemperatura(double[] temperaturas)
+    {
+        double menorTemp = temperaturas[0];
+        for (int i = 1; i < temperaturas.Length; i++)
+        {
+            if (temperaturas[i] < menorTemp)
+            {
+                menorTemp = temperaturas[i];
+            }
         }
+        return menorTemp;
+    }
+
+// Função para calcular a maior temperatura
+    public static double CalcularMaiorTemperatura(double[] temperaturas)
+    {
+        double maiorTemp = temperaturas[0];
+        for (int i = 1; i < temperaturas.Length; i++)
+        {
+            if (temperaturas[i] > maiorTemp)
+            {
+                maiorTemp = temperaturas[i];
+            }
+        }
+        return maiorTemp;
+    }
+
+// Função para calcular a temperatura média
+    public static double CalcularTemperaturaMedia(double[] temperaturas)
+    {
+        double soma = 0;
+        for (int i = 0; i < temperaturas.Length; i++)
+        {
+            soma += temperaturas[i];
+        }
+        return soma / temperaturas.Length;
+    }
+
+// Função para contar o número de dias com temperatura abaixo da média
+    public static int ContarDiasAbaixoMedia(double[] temperaturas, double temperaturaMedia)
+    {
+        int contagem = 0;
+        for (int i = 0; i < temperaturas.Length; i++)
+        {
+            if (temperaturas[i] < temperaturaMedia)
+            {
+                contagem++;
+            }
+        }
+        return contagem;
+    }
 }
