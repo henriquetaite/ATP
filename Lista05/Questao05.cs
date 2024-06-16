@@ -1,35 +1,61 @@
 using System;
 public class Questao05 {
     public void Rodar() {
-//Declarando variáveis para receber números das tentativas
-        int x = 0;
-//Declarando vetor sorteado
-        int [] vetorS = new int [3];
-    
-//Acionando função
-            vetorS = SorteioVetorS (vetorS);
+// Sorteando 3 números entre 10 e 50
+        int[] numerosSorteados = SortearNumeros();
 
-//Acionando procedimento
-            PerguntandoUsuário (x);
+        Console.WriteLine("Tente adivinhar um dos números sorteados entre 10 e 50.");
 
-//Criando foreach para pesquisar os números do vetor e comparar com os do usuário
-            foreach (int item in vetorS) {
-                if (x == item) {
-                    Console.WriteLine ("Você acertou um número!");
+        // Lendo as tentativas do usuário até que ele acerte um número sorteado
+        TentarAdivinhar(numerosSorteados);
+
+        Console.WriteLine("Você acertou um número sorteado!");
+    }
+
+    // Função que sorteia 3 números entre 10 e 50 e retorna em um vetor
+    public static int[] SortearNumeros()
+    {
+        Random rand = new Random();
+        int[] numeros = new int[3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            numeros[i] = rand.Next(10, 51);
+        }
+
+        Console.WriteLine("Números sorteados: ");
+        foreach (int num in numeros)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+
+        return numeros;
+    }
+
+    // Procedimento que lê as tentativas do usuário até que ele acerte um número sorteado
+    public static void TentarAdivinhar(int[] numerosSorteados)
+    {
+        bool acertou = false;
+
+        while (!acertou)
+        {
+            Console.WriteLine("Digite sua tentativa:");
+            int tentativa = int.Parse(Console.ReadLine());
+
+            foreach (int num in numerosSorteados)
+            {
+                if (tentativa == num)
+                {
+                    acertou = true;
+                    break;
                 }
             }
+
+            if (!acertou)
+            {
+                Console.WriteLine("Você não acertou. Tente novamente.");
+            }
         }
-//Criando função de sorteio
-    public int [] SorteioVetorS (int [] vetorS) {
-        Random randNum = new Random ();
-        for (int i = 0; i < 3; i++) {
-            vetorS [i] = randNum.Next (10, 51);
-        }
-            return vetorS;
-    }
-//Criando procedimento de tentativa
-    public void PerguntandoUsuário (int x) {
-        Console.WriteLine ("Digite 1 número entre 10 e 50");
-        x = int.Parse (Console.ReadLine());
     }
 }
