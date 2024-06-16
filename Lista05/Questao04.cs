@@ -1,26 +1,64 @@
 using System;
 public class Questao04 {
     public void Rodar() {
-//Declarando vetores X e Y
-        int [] vetorX = new int [10];
-        int [] vetorY = new int [10];
-        int [] vetorN = new int [20];
+ // Declarando e inicializando os vetores X e Y
+        int[] vetorX = new int[10];
+        int[] vetorY = new int[10];
+        
+        // Preenchendo os vetores X e Y
+        PreencherVetor(vetorX, "X");
+        PreencherVetor(vetorY, "Y");
 
+        // Gerando o novo vetor Z com elementos intercalados de X e Y
+        int[] vetorZ = IntercalarVetores(vetorX, vetorY);
+
+        // Exibindo os vetores
+        Console.WriteLine("Vetor X:");
+        ExibirVetor(vetorX);
+
+        Console.WriteLine("Vetor Y:");
+        ExibirVetor(vetorY);
+
+        Console.WriteLine("Vetor Z (intercalado):");
+        ExibirVetor(vetorZ);
     }
-//Criando procedimento que preencher vetores X e Y
-        public void PreencherVetores (int [] vetorX, int [] vetorY) {
-            Random randNum = new Random ();
-            for (int i = 0; i < 10; i++) {
-                vetorX [i] = randNum.NextInt () * 50 - 10;
+
+    // Procedimento para preencher um vetor com 10 elementos
+    public static void PreencherVetor(int[] vetor, string nome)
+    {
+        Random randNum = new Random();
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            vetor[i] = randNum.Next(1, 101); // Preenche com números aleatórios de 1 a 100
+        }
+    }
+
+    // Procedimento para exibir o conteúdo de um vetor
+    public static void ExibirVetor(int[] vetor)
+    {
+        foreach (int item in vetor)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
+
+    // Procedimento para intercalar dois vetores em um novo vetor
+    public static int[] IntercalarVetores(int[] vetorX, int[] vetorY)
+    {
+        int[] vetorZ = new int[vetorX.Length + vetorY.Length];
+        int j = 0, k = 0;
+        for (int i = 0; i < vetorZ.Length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                vetorZ[i] = vetorX[j++];
             }
-            Random randNum = new Random ();
-            for (int i = 0; i < 10; i++) {
-                vetorY [i] = randNum.NextInt () * 50 - 10; 
+            else
+            {
+                vetorZ[i] = vetorY[k++];
             }
         }
-//Criando procedimento para preencher novo vetor
-        public void AgregarVetores (int [] vetorN) {
-//Acionando um procedimento dentro do outro
-            PreencherVetores (vetorX, vetorY);
-        }
+        return vetorZ;
+    }
 }
