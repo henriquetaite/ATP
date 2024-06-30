@@ -2,33 +2,39 @@ using System;
 public class Questao01 {
     public void Rodar() {
 
-//Declarando vetor N com 20 posições
-        double [] N = new double [20];
+// Solicitando ao usuário que insira a string a ser codificada
+        Console.WriteLine("Digite a string a ser codificada:");
+        string stringOriginal = Console.ReadLine();
 
-//Gerando números aleatórios para preencher o vetor
-        Random randNum = new Random();
+// Acionando função para codificar a string usando o Código de César
+        string stringCodificada = CodificarCesar(stringOriginal, 3);
 
-//Definindo o tamanho do vetor com suas posições
-        for (int i = 0; i < 20; i++) {
+// Imprimindo a string original e a string codificada
+        Console.WriteLine("String Original: " + stringOriginal);
+        Console.WriteLine("Nova String Codificada: " + stringCodificada);
+    }
 
-//Usando função .Next para preencher cada posição do vetor com um número aleatório
-            N[i] = randNum.NextDouble();
+// Codificando a string com o Código de César
+    static string CodificarCesar(string texto, int deslocamento) {
+
+// Convertendo a string em um array de caracteres para a manipulação ficar mais fácil
+        char[] caracteres = texto.ToCharArray();
+
+// Loop através de cada caractere na string
+        for (int i = 0; i < caracteres.Length; i++) {
+
+// Conferindo se o caractere é igual a uma letra
+            if (char.IsLetter(caracteres[i])) {
+                
+// Determinando se a letra é maiúscula ou minúscula
+                char baseLetra = char.IsUpper(caracteres[i]) ? 'A' : 'a';
+
+// Fazendo o cálculo para deslocar a letra 3 "casas" à frente
+                caracteres[i] = (char)(((caracteres[i] - baseLetra + deslocamento) % 26) + baseLetra);
+            }
         }
-
-//Inicializando variável M com o valor do primeiro elemento do vetor N
-                double M = N[0];
-                int P = 0;
-
-//Criando comando for para percorrer o vetor 
-        for (int i = 1; i < 20; i++) { //i inicializado na posição 1 porque double M já foi declarado como na posição 0, não havendo necessidade de percorre-la novamente
-
-//Criando comando if para atualizar a variável M
-                if (N[i] < M) {
-                        M = N[i];
-                        P = i;
-                }
-        }
-//Imprimindo resultados do enunciado
-        Console.WriteLine ("O menor elemento de N é " + M + " e sua posição dentro do vetor é: " + P); 
+// Fazendo os novos caracteres se transformarem em strings e retornarem na tela
+        return new string(caracteres);
     }
 }
+
