@@ -1,34 +1,64 @@
 using System;
-public class Questao01 {
+using System.IO;
+
+public class Questao07 {
     public void Rodar() {
-
-//Declarando vetor N com 20 posições
-        double [] N = new double [20];
-
-//Gerando números aleatórios para preencher o vetor
-        Random randNum = new Random();
-
-//Definindo o tamanho do vetor com suas posições
-        for (int i = 0; i < 20; i++) {
-
-//Usando função .Next para preencher cada posição do vetor com um número aleatório
-            N[i] = randNum.NextDouble();
+        Console.WriteLine("Digite a quantidade de letras que deseja inserir:");
+        if (!int.TryParse(Console.ReadLine(), out int quantidadeLetras) || quantidadeLetras <= 0) {
+            Console.WriteLine("Quantidade inválida. Encerrando o programa.");
+            return;
         }
 
-//Inicializando variável M com o valor do primeiro elemento do vetor N
-                double M = N[0];
-                int P = 0;
+// Solicitando ao usuário para inserir as letras
+        string letrasInseridas = SolicitarLetras(quantidadeLetras);
 
-//Criando comando for para percorrer o vetor 
-        for (int i = 1; i < 20; i++) { //i inicializado na posição 1 porque double M já foi declarado como na posição 0, não havendo necessidade de percorre-la novamente
+// Definindo o caminho do arquivo para questão 07
+        string caminhoArquivo = @"C:\Users\USUÁRIO\Documents\ATP\Lista06\Arquivo para questão 07.txt";
 
-//Criando comando if para atualizar a variável M
-                if (N[i] < M) {
-                        M = N[i];
-                        P = i;
+// Salvando as letras no arquivo
+        SalvarLetrasNoArquivo(letrasInseridas, caminhoArquivo);
+        Console.WriteLine($"Letras salvas no arquivo '{caminhoArquivo}'.");
+
+// Calcula e imprime a quantidade de vogais no arquivo
+        int quantidadeVogais = ContarVogaisNoArquivo(caminhoArquivo);
+        Console.WriteLine($"Quantidade de vogais (a, e, i, o, u) no arquivo: {quantidadeVogais}");
+    }
+
+// Criando função para solicitar ao usuário que insira as letras
+    public static string SolicitarLetras(int quantidadeLetras) {
+        Console.WriteLine($"Digite as {quantidadeLetras} letras:");
+        return Console.ReadLine();
+    }
+
+// Criando função para salvar as letras no arquivo texto para a questão 07
+    public static void SalvarLetrasNoArquivo(string letras, string caminhoArquivo) {
+        try {
+            using (StreamWriter writer = new StreamWriter(caminhoArquivo)) {
+                writer.WriteLine(letras);
+            }
+        }
+        catch (Exception) {
+            Console.WriteLine($"Erro ao salvar o arquivo! Verifique e tente novamente.");
+        }
+    }
+
+// Criando função para contar a quantidade de vogais salvas no arquivo para a questão 07
+    public static int ContarVogaisNoArquivo(string caminhoArquivo) {
+        try {
+            string conteudo = File.ReadAllText(caminhoArquivo);
+
+            int quantidadeVogais = 0;
+            foreach (char c in conteudo) {
+                if ("aeiouAEIOU".Contains(c)) {
+                    quantidadeVogais++;
                 }
+            }
+
+            return quantidadeVogais;
         }
-//Imprimindo resultados do enunciado
-        Console.WriteLine ("O menor elemento de N é " + M + " e sua posição dentro do vetor é: " + P); 
+        catch (Exception) {
+            Console.WriteLine($"Erro ao contar as vogais no arquivo! Verifique e tente novamente.");
+            return 0;
+        }
     }
 }
