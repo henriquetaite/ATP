@@ -1,0 +1,8 @@
+
+O QUE É A DISCIPLINA DE ALGORÍTMOS E TÉCNICAS DE PROGRAMAÇÃO?
+
+A disciplina de Algoritmos e Técnicas de Programação é fundamental para qualquer estudante ou profissional da área de ciência da computação ou engenharia de software. Essa disciplina foca no ensino de conceitos fundamentais para a construção de programas computacionais eficientes e robustos.
+
+No decorrer do curso, os alunos são introduzidos aos princípios básicos da programação, começando com algoritmos simples e avançando para estruturas de dados mais complexas e algoritmos sofisticados. O objetivo é desenvolver habilidades para resolver problemas computacionais de maneira estruturada e eficiente, utilizando linguagens de programação como ferramentas principais.
+
+Além disso, Algoritmos e Técnicas de Programação não se limita apenas ao aspecto técnico da codificação. Ela também enfatiza a importância da lógica de programação, da análise de complexidade algorítmica e da capacidade de decompor problemas grandes em problemas menores, facilitando assim a implementação de soluções escaláveis e sustentáveis. Essa disciplina é essencial para preparar os estudantes não apenas para escrever código, mas também para pensar de forma analítica e resolver desafios reais da computação
