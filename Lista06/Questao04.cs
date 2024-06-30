@@ -1,34 +1,36 @@
 using System;
-public class Questao01 {
+using System.IO;
+
+public class Questao04
+{
     public void Rodar() {
+// Definindo o caminho do arquivo
+        string caminhoArquivo = @"C:\Users\USUÁRIO\Documents\ATP\Lista06\Arquivo para questão 04.txt";
+        
+// Chama o método para contar caracteres 'a'
+        ContarCaracteresA(caminhoArquivo);
+    }
 
-//Declarando vetor N com 20 posições
-        double [] N = new double [20];
+    public static void ContarCaracteresA(string caminhoArquivo) {
+        try {
 
-//Gerando números aleatórios para preencher o vetor
-        Random randNum = new Random();
+// Lê o conteúdo do arquivo de texto
+            string conteudo = File.ReadAllText(caminhoArquivo);
 
-//Definindo o tamanho do vetor com suas posições
-        for (int i = 0; i < 20; i++) {
-
-//Usando função .Next para preencher cada posição do vetor com um número aleatório
-            N[i] = randNum.NextDouble();
-        }
-
-//Inicializando variável M com o valor do primeiro elemento do vetor N
-                double M = N[0];
-                int P = 0;
-
-//Criando comando for para percorrer o vetor 
-        for (int i = 1; i < 20; i++) { //i inicializado na posição 1 porque double M já foi declarado como na posição 0, não havendo necessidade de percorre-la novamente
-
-//Criando comando if para atualizar a variável M
-                if (N[i] < M) {
-                        M = N[i];
-                        P = i;
+// Conta a quantidade de caracteres 'a'
+            int quantidadeA = 0;
+            foreach (char c in conteudo) {
+                if (char.ToLower(c) == 'a') {
+                    quantidadeA++;
                 }
+            }
+
+// Imprime a quantidade na tela
+            Console.WriteLine($"Quantidade de caracteres 'a': {quantidadeA}");
         }
-//Imprimindo resultados do enunciado
-        Console.WriteLine ("O menor elemento de N é " + M + " e sua posição dentro do vetor é: " + P); 
+        catch (Exception ex) {
+// Exibe mensagem de erro caso não seja possível ler o arquivo
+            Console.WriteLine($"Erro ao ler o arquivo: {ex.Message}");
+        }
     }
 }
