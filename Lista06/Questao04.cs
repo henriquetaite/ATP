@@ -28,9 +28,9 @@ public class Questao04
 // Imprime a quantidade na tela
             Console.WriteLine($"Quantidade de caracteres 'a': {quantidadeA}");
         }
-        catch (Exception ex) {
+        catch (Exception) {
 // Exibe mensagem de erro caso não seja possível ler o arquivo
-            Console.WriteLine($"Erro ao ler o arquivo: {ex.Message}");
+            Console.WriteLine($"Erro ao ler o arquivo! Verifique e tente novamente.");
         }
     }
 }
