@@ -1,34 +1,58 @@
 using System;
-public class Questao01 {
+using System.IO;
+using System.Linq;
+
+public class Questao10 {
+// Definindo caminho fixo para o arquivo
+    private string caminhoArquivo = @"C:\Users\USUÁRIO\Documents\ATP\Lista06\Arquivo para questão 10.txt";
     public void Rodar() {
+// Fazendo leitura dos números do arquivo
+        double[] numeros = LerNumerosDoArquivo();
 
-//Declarando vetor N com 20 posições
-        double [] N = new double [20];
-
-//Gerando números aleatórios para preencher o vetor
-        Random randNum = new Random();
-
-//Definindo o tamanho do vetor com suas posições
-        for (int i = 0; i < 20; i++) {
-
-//Usando função .Next para preencher cada posição do vetor com um número aleatório
-            N[i] = randNum.NextDouble();
+// Verificando se o arquivo contém números válidos
+        if (numeros.Length == 0) {
+            Console.WriteLine("Arquivo não contém números válidos ou está vazio! Verifique e tente novamente.");
+            return;
         }
 
-//Inicializando variável M com o valor do primeiro elemento do vetor N
-                double M = N[0];
-                int P = 0;
+// Calculando o valor máximo, mínimo e a média dos números
+        double valorMaximo = numeros.Max();
+        double valorMinimo = numeros.Min();
+        double media = numeros.Average();
 
-//Criando comando for para percorrer o vetor 
-        for (int i = 1; i < 20; i++) { //i inicializado na posição 1 porque double M já foi declarado como na posição 0, não havendo necessidade de percorre-la novamente
+// Imprimindo os resultados na tela
+        Console.WriteLine($"Valor máximo: {valorMaximo}");
+        Console.WriteLine($"Valor mínimo: {valorMinimo}");
+        Console.WriteLine($"Média: {media}");
+    }
 
-//Criando comando if para atualizar a variável M
-                if (N[i] < M) {
-                        M = N[i];
-                        P = i;
+// Criando função para ler os números do arquivo e retorná-los em vetor
+    private double[] LerNumerosDoArquivo() {
+        try {
+// Verificando se o arquivo existe
+            if (!File.Exists(caminhoArquivo)) {
+                Console.WriteLine($"Arquivo '{caminhoArquivo}' não encontrado. Verifique e tente novamente.");
+                return new double[0]; // Retorna um array vazio se o arquivo não existir
+            }
+// Fazendo leitura de todas as linhas do arquivo
+            string[] linhas = File.ReadAllLines(caminhoArquivo);
+
+// Criando o vetor para armazenar os números
+            double[] numeros = new double[linhas.Length];
+
+// Percorrendo cada linha do arquivo
+            for (int i = 0; i < linhas.Length; i++) {
+
+// Tentando converter a linha para um número em ponto flutuante
+                if (double.TryParse(linhas[i], out double numero)) {
+                    numeros[i] = numero;
                 }
+            }
+// Retornando apenas os números diferentes de zero
+            return numeros.Where(num => num != 0).ToArray();
+        } catch (Exception) {
+            Console.WriteLine($"Erro ao ler o arquivo! Verifique e tente novamente.");
+            return new double[0];
         }
-//Imprimindo resultados do enunciado
-        Console.WriteLine ("O menor elemento de N é " + M + " e sua posição dentro do vetor é: " + P); 
     }
 }
