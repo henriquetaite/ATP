@@ -9,19 +9,22 @@ public class Questao06 {
             return;
         }
 
-// Obtém os divisores e calcula a soma
+        // Obtém os divisores e calcula a soma
         int somaDivisores = CalcularDivisores(numero);
 
-// Imprime os divisores na tela
+        // Imprime os divisores na tela
         Console.WriteLine($"Divisores de {numero}: ");
         ImprimirDivisores(numero);
 
-// Salva a soma dos divisores no arquivo criado especificamente para a questão 06
-        SalvarSomaDivisores(numero, somaDivisores, @ "Arquivo para questão 06");
-        Console.WriteLine($"Soma total dos divisores salva no arquivo 'Arquivo para questão 06'.");
+        // Define o caminho completo do arquivo onde será salvo
+        string caminhoArquivo = @"C:\Users\USUÁRIO\Documents\ATP\Lista06\Arquivo para questão 06.txt";
+
+        // Salva a soma dos divisores no arquivo
+        SalvarSomaDivisores(numero, somaDivisores, caminhoArquivo);
+        Console.WriteLine($"Soma total dos divisores salva no arquivo '{caminhoArquivo}'.");
     }
 
-// Criando função que calcula os divisores e retorna a soma demandada
+    // Função que calcula os divisores e retorna a soma
     public static int CalcularDivisores(int numero) {
         int soma = 0;
         for (int i = 1; i <= numero; i++) {
@@ -32,7 +35,7 @@ public class Questao06 {
         return soma;
     }
 
-// Criando função que imprime os divisores na tela
+    // Função que imprime os divisores na tela
     public static void ImprimirDivisores(int numero) {
         for (int i = 1; i <= numero; i++) {
             if (numero % i == 0) {
@@ -42,10 +45,10 @@ public class Questao06 {
         Console.WriteLine(); // Pula uma linha após imprimir os divisores
     }
 
-// Criando função para salvar a soma dos divisores em um arquivo texto
-    public static void SalvarSomaDivisores(int numero, int soma) {
+    // Função para salvar a soma dos divisores em um arquivo texto
+    public static void SalvarSomaDivisores(int numero, int soma, string caminhoArquivo) {
         try {
-            using (StreamWriter writer = new StreamWriter("soma_divisores.txt")) {
+            using (StreamWriter writer = new StreamWriter(caminhoArquivo)) {
                 writer.WriteLine($"Número: {numero}");
                 writer.WriteLine($"Soma dos divisores: {soma}");
             }
