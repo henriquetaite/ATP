@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ATP")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Lista06")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cd0f248f9c53127b3e796226be6f04eb13e6e5a")]
-[assembly: System.Reflection.AssemblyProductAttribute("ATP")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ATP")]
+[assembly: System.Reflection.AssemblyProductAttribute("Lista06")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Lista06")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

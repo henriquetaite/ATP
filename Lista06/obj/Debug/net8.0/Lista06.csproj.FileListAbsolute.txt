@@ -1,0 +1,15 @@
+C:\Users\USUÁRIO\Documents\ATP\Lista06\bin\Debug\net8.0\Lista06.exe
+C:\Users\USUÁRIO\Documents\ATP\Lista06\bin\Debug\net8.0\Lista06.deps.json
+C:\Users\USUÁRIO\Documents\ATP\Lista06\bin\Debug\net8.0\Lista06.runtimeconfig.json
+C:\Users\USUÁRIO\Documents\ATP\Lista06\bin\Debug\net8.0\Lista06.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista06\bin\Debug\net8.0\Lista06.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.AssemblyInfoInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.AssemblyInfo.cs
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.csproj.CoreCompileInputs.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.sourcelink.json
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\refint\Lista06.dll
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.pdb
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\Lista06.genruntimeconfig.cache
+C:\Users\USUÁRIO\Documents\ATP\Lista06\obj\Debug\net8.0\ref\Lista06.dll
